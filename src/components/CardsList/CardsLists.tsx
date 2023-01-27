@@ -42,6 +42,7 @@ const CardList = ({ cardsPerRow }: CardListInterface) => {
         setCardListWidth('40rem');
         break;
       default:
+        setCardListWidth('80rem');
         break;
     }
   }, [cardsPerRow]);
