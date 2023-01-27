@@ -5,7 +5,7 @@ import Nav from '../components/Nav/Nav';
 import GlobalState from '../context/globalState';
 
 const Products = () => {
-  const [rowProducts, setRowProducts] = useState(4);
+  const [rowProducts, setRowProducts] = useState('');
 
   const handleChange = (event: any) => {
     setRowProducts(event.target.value);
@@ -20,14 +20,14 @@ const Products = () => {
           <label>
             Cuantos elementos te gustaria ver por fila?
             <br />
-            <select value={rowProducts} onChange={handleChange}>
-              <option value={2}>2</option>
-              <option value={3}>3</option>
-              <option value={4}>4</option>
+            <select defaultValue='4' onChange={handleChange}>
+              <option value='4'>4</option>
+              <option value='3'>3</option>
+              <option value='2'>2</option>
             </select>
           </label>
 
-          <CardList />
+          <CardList cardsPerRow={rowProducts} />
         </ProductsContainer>
       </>
     </GlobalState>

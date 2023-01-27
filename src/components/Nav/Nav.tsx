@@ -8,6 +8,7 @@ const Nav = () => {
       <Link to={'/'}>Home</Link>
       <Link to={'/products'}>Products</Link>
       <Link to={'/users'}>Users</Link>
+      <Link to={'/diagram'}>Diagram</Link>
     </NavWrapper>
   );
 };

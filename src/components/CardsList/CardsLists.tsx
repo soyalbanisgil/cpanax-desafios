@@ -4,7 +4,13 @@ import GlobalContext from '../../context/globalContext';
 import Card, { CardInterface } from '../Card/Card';
 import { CardsList, Pagination } from './styles';
 
-const CardList = () => {
+interface CardListInterface {
+  cardsPerRow: string;
+}
+
+const CardList = ({ cardsPerRow }: CardListInterface) => {
+  const [cardListWidth, setCardListWidth] = useState('80%');
+
   // get produts
   const data = useContext(GlobalContext);
   const { getProducts, allProducts } = data;
@@ -24,9 +30,25 @@ const CardList = () => {
     setItemOffset(newOffset);
   };
 
+  useEffect(() => {
+    switch (cardsPerRow) {
+      case '4':
+        setCardListWidth('80rem');
+        break;
+      case '3':
+        setCardListWidth('70rem');
+        break;
+      case '2':
+        setCardListWidth('40rem');
+        break;
+      default:
+        break;
+    }
+  }, [cardsPerRow]);
+
   return (
     <>
-      <CardsList>
+      <CardsList bgWidth={cardListWidth}>
         {allProducts == null ? (
           <p>Loading</p>
         ) : (

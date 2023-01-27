@@ -7,6 +7,7 @@ import ErrorPage from './pages/error-page';
 import Products from './pages/products';
 import Home from './pages/home';
 import Users from './pages/users';
+import Diagram from './pages/diagram';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
   {
     path: 'users',
     element: <Users />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: 'diagram',
+    element: <Diagram />,
     errorElement: <ErrorPage />,
   },
 ]);

@@ -12,6 +12,7 @@ const GlobalState = ({ children }: ContextInterface) => {
   const initialState = {
     allProducts: null,
     allUsers: null,
+    allNodes: null,
   };
 
   const [state, dispatch] = useReducer(GlobalReducer, initialState);

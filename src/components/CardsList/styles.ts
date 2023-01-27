@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
+interface StylesCardsList {
+  bgWidth: string;
+}
+
 export const CardsList = styled.section`
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
   justify-content: center;
-  width: 80%;
+  width: ${({ bgWidth }: StylesCardsList) => bgWidth};
   margin: 0 auto;
 `;
 

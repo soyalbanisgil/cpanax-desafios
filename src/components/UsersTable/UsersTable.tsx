@@ -51,8 +51,6 @@ const UsersTable = () => {
     },
   };
 
-  console.log(modalData);
-
   return (
     <>
       {!allUsers ? (
